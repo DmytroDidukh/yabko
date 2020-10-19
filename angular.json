@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "yabko"
+    }
+  },
+  "defaultProject": "yabko",
+  "cli": {
+    "analytics": "98d978d9-a502-4ac6-86ad-985c0a662ce5"
+  }
 }
