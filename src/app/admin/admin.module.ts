@@ -9,6 +9,7 @@ import {AddPageComponent} from './add-page/add-page.component';
 import {DashboardPageComponent} from './dashboard-page/dashboard-page.component';
 import {EditPageComponent} from './edit-page/edit-page.component';
 import {OrdersPageComponent} from './orders-page/orders-page.component';
+import {CanActivateGuard} from '../shared/can-activate.guard';
 
 @NgModule({
   imports: [
@@ -25,16 +26,16 @@ import {OrdersPageComponent} from './orders-page/orders-page.component';
             path: 'login', component: LoginPageComponent
           },
           {
-            path: 'dashboard', component: DashboardPageComponent
+            path: 'dashboard', component: DashboardPageComponent, canActivate: [CanActivateGuard]
           },
           {
-            path: 'add', component: AddPageComponent
+            path: 'add', component: AddPageComponent, canActivate: [CanActivateGuard]
           },
           {
-            path: 'orders', component: OrdersPageComponent
+            path: 'orders', component: OrdersPageComponent, canActivate: [CanActivateGuard]
           },
           {
-            path: 'product/:id/edit', component: EditPageComponent
+            path: 'product/:id/edit', component: EditPageComponent, canActivate: [CanActivateGuard]
           },
         ]
       }
