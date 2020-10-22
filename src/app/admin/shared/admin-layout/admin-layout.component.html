@@ -12,11 +12,13 @@
     <li routerLinkActive="active">
       <a [routerLink]="['/admin', 'orders']">Orders</a>
     </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/admin', '']">Logout</a>
-    </li>
-    <li routerLinkActive="active">
+    <li routerLinkActive="active"
+     *ngIf="!auth.isAuthenticated()">
       <a [routerLink]="['/admin', 'login']">Login</a>
+    </li>
+    <li routerLinkActive="active"
+        *ngIf="auth.isAuthenticated()">
+      <a href="#" (click)="logout($event)">Logout</a>
     </li>
   </ul>
 </nav>
